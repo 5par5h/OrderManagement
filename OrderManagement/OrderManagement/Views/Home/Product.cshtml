@@ -1,0 +1,71 @@
+﻿@model OrderManagement.Models.ProductList
+@{
+    ViewBag.Title = "Product";
+}
+
+<h2>Product</h2>
+<section class="content-wrapper">
+    <div class="container-fluid">
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 w-100">
+                        <div class="card-box">
+                            <form class="w-100">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                               <div class="table-responsive mt-1 table-wrapper-scroll-y" id="divTbl">
+                                                    <table class="table table-fixed" id="tblProducts">
+                                                        <tbody id="tdbyProducts">
+                                                            @if (Model.productList != null)
+                                                            {
+                                                                @foreach (var product in Model.productList)
+                                                                {
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.DisplayFor(m => product.image_url)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(m => product.product_name)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(m => product.product_description)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(m => product.price)
+                                                                </td>
+                                                                <td>
+                                                                    @Html.DisplayFor(m => product.image_url)
+                                                                </td>
+                                                                @if (Session["EmailId"] != null && Session["EmailId"] != "")
+                                                                {
+                                                                    <td>
+                                                                        @Html.ActionLink("AddToCart", "AddToCart", "Cart", new { id = product.product_id }, new { @class = "far fa-edit icon" })
+                                                                    </td>
+                                                                }
+                                                                @if (Session["UserRole"].ToString().ToLower().Equals("admin"))
+                                                                {
+                                                                    <td>
+                                                                        @Html.ActionLink("Edit", "EditProduct", "Product", new { id = product.product_id }, new { @class = "far fa-edit icon" })
+                                                                    </td>
+                                                                }
+                                                            </tr> 
+                                                                 }
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

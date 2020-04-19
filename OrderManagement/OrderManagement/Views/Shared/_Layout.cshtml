@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"><img class="sidebar-log-icon" src="~/Content/image/ordermanagementpost.jpg" style="height:50px" alt="Order Management" /></span>
+                </button>
+                <div hidden="hidden">
+                <img class="sidebar-log-icon" src="~/Content/image/ordermanagementpost.jpg" style="height:50px" alt="Order Management" />
+                </div>
+                @Html.ActionLink("Order Management", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    @if (!true) //String.IsNullOrEmpty(Session["EmailAddress"].ToString())
+                    {
+                        <li class="nav-item dropdown" data-toggle="tooltip" data-placement="right" title="" data-original-title="Account">
+                            <a class="nav-link" asp-controller="Home" asp-action="Account" title="Account">
+                                <span class="nav-link-text">Account</span>
+                            </a>
+                            <div class="dropdown-content" style="margin-left:65px">
+                                <a href="@Url.Action("My Cart", "Account")">My Cart</a>
+                                <a href="@Url.Action("My Wishlist", "Account")">My Wishlist</a>
+                                <a href="@Url.Action("My Order", "Account")">My Order</a>
+                                <a href="@Url.Action("My Account", "Account")">My Account</a>
+                                <a href="@Url.Action("My Notification", "Account")">My Notification</a>
+
+                            </div>
+                        </li>
+
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                    }
+
+                </ul>
+                <ul class="nav navbar-nav" style="float:right">
+                    @if (!true) //String.IsNullOrEmpty(Session["EmailAddress"].ToString())
+                    {
+                        <li> @Html.ActionLink("Logout", "Home")</li>
+                    }
+                    else
+                    {
+                        <li> @Html.ActionLink("Login", "Index", "Login")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

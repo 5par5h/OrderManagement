@@ -1,0 +1,210 @@
+﻿body {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+
+.select2-container {
+    min-width: 280px;
+}
+
+.select2-results__option {
+    padding-right: 20px;
+    vertical-align: middle;
+}
+
+    .select2-results__option:before {
+        content: "";
+        display: inline-block;
+        position: relative;
+        height: 20px;
+        width: 20px;
+        border: 2px solid #e9e9e9;
+        border-radius: 4px;
+        background-color: #fff;
+        margin-right: 20px;
+        vertical-align: middle;
+    }
+
+    .select2-results__option[aria-selected=true]:before {
+        font-family: fontAwesome;
+        content: "\f00c";
+        color: #fff;
+        background-color: #f77750;
+        border: 0;
+        display: inline-block;
+        padding-left: 3px;
+    }
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: #fff;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #eaeaeb;
+    color: #272727;
+}
+
+.select2-container--default .select2-selection--multiple {
+    margin-bottom: 10px;
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+    border-radius: 4px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border-color: #f77750;
+    border-width: 2px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border-width: 2px;
+}
+
+.select2-container--open .select2-dropdown--below {
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.select2-selection .select2-selection--multiple:after {
+    content: 'hhghgh';
+}
+
+.circle {
+    height: 26px;
+    width: 26px;
+    background-color: #FF0000;
+    border-radius: 50%;
+    display: inline-block;
+    color: white;
+    text-align: center;
+}
+/* select with icons badges single*/
+/*.select-icon .select2-selection__placeholder .badge {
+    display: none;
+}
+
+.select-icon .placeholder {
+    display: none;
+}
+
+.select-icon .select2-results__option:before,
+.select-icon .select2-results__option[aria-selected=true]:before {
+    display: none !important;
+    /* content: "" !important; */
+}
+
+/*.select-icon .select2-search--dropdown {
+    display: none;
+}*/
+
+
+/* Basics */
+body {
+    background: #eee;
+    padding: 5em;
+}
+
+label, input {
+    color: #333;
+    font: 14px/20px Arial;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 1em;
+}
+
+label {
+    display: inline-block;
+    /*width: 5em;*/
+    padding: 0 1em;
+    text-align: right;
+}
+
+/* Hide the file input using
+opacity */
+/*[type=file] {
+    position: absolute;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+    input,
+    [type=file] + label {
+        border: 1px solid #CCC;
+        border-radius: 3px;
+        text-align: left;
+        padding: 10px;
+        width: 150px;
+        margin: 0;
+        left: 0;
+        position: relative;
+    }*/
+
+[type=file] + label {
+    text-align: center;
+    /*left: 7.35em;*/
+    top: 0.5em;
+    /* Decorative */
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+    [type=file] + label:hover {
+        background: #3399ff;
+    }
+
+
+/*table scroll*/
+.table-wrapper-scroll-y {
+    /*display: block;*/
+    max-height: 400px; /*800px;*/
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/*table header fixed*/
+.table-fixed thead th {
+    position: sticky;
+    /*position: -webkit-sticky;*/
+    top: 0;
+    /*z-index: 999;*/
+    background-color: #292A5A;
+}
+
+
+@media (width: 1366px) {
+    .table-wrapper-scroll-y {
+        /*max-height: 350px;*/ /*@ZAID*/
+        max-height: 400px;
+    }
+}
+
+@media (width: 1920px) {
+    .table-wrapper-scroll-y {
+        max-height: 650px;
+    }
+}
+
+.selectedrow {
+    color: #000;
+    background-color: #CCC;   
+}
+
+.removePointer.table tr:hover {
+    cursor: default !important;
+}
+
+table tr:hover {
+    cursor: pointer;
+}
+.hoverTable tr:hover {
+    background-color: orange !important;
+    /*background-color: #ffff99;*/
+}
